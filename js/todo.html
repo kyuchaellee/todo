@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div >
+  <input type="text" class="inputt" placeholder="todo">
+  <button  class = "savetodo" >SAVE</button>
+</div>
+<ul class="todoList">
+
+</ul>
+
+<script>
+
+
+  const renderTodo=((todos)=>{
+    
+    let str = ''
+    for (let i = 0; i <todos.length ; i++) {
+      str += `<li>${todos[i].title} <button class="delete">DEL</button></li>`
+      document.querySelector(".todoList").innerHTML = str
+    }
+
+    return renderTodo
+  },false)
+
+
+  const todoService=((todos)=>{
+
+
+    const add=((todo)=>{
+     renderTodo({todo})
+      return add;
+    })
+
+    return {add}
+  })()
+
+  // const save = document.querySelector(".savetodo").addEventListener("click",()=>{
+  //         let str =''
+  //         str += document.querySelector(".inputt").value
+  //
+  //         todoService.add({title:str})
+  //
+  // },false)
+
+
+
+  // todoService.add({title:"test1"})
+  // todoService.add({title:"test2"})
+  // todoService.add({title:"test3"})
+  // todoService.add({title:"test4"})
+
+</script>
+
+
+</body>
+</html>
